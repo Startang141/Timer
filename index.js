@@ -57,3 +57,16 @@ function updateTime(){
         return(("0")+unit).length > 2 ? unit:"0"+unit;
     }
 }
+
+startBtn.addEventListener('click', function(){
+    startBtn.style.backgroundColor = 'green';
+    startBtn.style.color = 'black';
+})
+pauseBtn.addEventListener('click', function(){
+    pauseBtn.style.backgroundColor = 'yellow';
+    pauseBtn.style.color = 'black';
+})
+resetBtn.addEventListener('click', function(){
+    resetBtn.style.backgroundColor = 'red';
+    resetBtn.style.color = 'black';
+})
