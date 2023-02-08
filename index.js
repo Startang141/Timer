@@ -17,6 +17,10 @@ startBtn.addEventListener("click", () => {
         paused = false;
         startTime = Date.now() - elapsedTime;
         intervalId = setInterval(updateTime, 1000);
+        startBtn.style.backgroundColor = 'green';
+        startBtn.style.color = 'black';
+        pauseBtn.style.backgroundColor = 'white'
+        resetBtn.style.backgroundColor = 'white'
     }
 
 });
@@ -25,7 +29,10 @@ pauseBtn.addEventListener("click", () =>{
         paused = true;
         elapsedTime = Date.now() - startTime;
         clearInterval(intervalId);
-    }
+        pauseBtn.style.backgroundColor = 'yellow';
+        pauseBtn.style.color = 'black';
+        startBtn.style.backgroundColor = 'white';
+    } 
 });
 resetBtn.addEventListener("click", () => {
     paused=true;
@@ -38,6 +45,9 @@ resetBtn.addEventListener("click", () => {
     secs = 0;
 
     timeDisplay.textContent = "00:00:00";
+    resetBtn.style.backgroundColor = 'red';
+    resetBtn.style.color = 'black';
+    startBtn.style.backgroundColor = 'white';
 });
 
 function updateTime(){
@@ -57,16 +67,3 @@ function updateTime(){
         return(("0")+unit).length > 2 ? unit:"0"+unit;
     }
 }
-
-startBtn.addEventListener('click', function(){
-    startBtn.style.backgroundColor = 'green';
-    startBtn.style.color = 'black';
-})
-pauseBtn.addEventListener('click', function(){
-    pauseBtn.style.backgroundColor = 'yellow';
-    pauseBtn.style.color = 'black';
-})
-resetBtn.addEventListener('click', function(){
-    resetBtn.style.backgroundColor = 'red';
-    resetBtn.style.color = 'black';
-})
